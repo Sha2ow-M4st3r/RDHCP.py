@@ -1,9 +1,11 @@
 # RDHCP.py
-Rogue DHCP Server   
+DHCP Spoofing Attack   
 
-A rogue DHCP server is a DHCP server set up on a network by an attacker, or by an unaware user, and is not under the control of network administrators. An accidental rogue device is commonly a modem or home wireless router with DHCP capabilities which a user has attached to the network unaware of the consequences of doing so. Rogue DHCP servers are also commonly used by attackers for the purpose of network attacks such as Man in the Middle, Sniffing, and Reconnaissance attacks.   
+This is a simple Python script designed to implementing DHCP spoofing attacks on the network. It is important to note that the script is not very fast due to the lack of multi-threading. This script is only useful for learning network socket programming in Python with scapy and for modeling and implementing it on a small network.
 
-By placing a rogue DHCP server on the network, a network attacker can provide clients with addresses and other network information. Because DHCP responses typically include default gateway and Domain Name System (DNS) server information, network attackers can supply their own system as the default gateway and DNS server resulting in a man-in-the-middle attack   
+## Usage
 
-# Usage:   
-python RDHCP.py interface
+```markdown
+sudo python3 dhcpspoof.py --iface <interface> --gateway <default-gateway> --dns <dns-server> --range <network-range/cidr>
+sudo python3 dhcpspoof.py --iface vboxnet0 --gateway 192.168.56.1 --dns 192.168.56.1 --range 192.168.56.0/24
+```
